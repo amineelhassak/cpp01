@@ -19,8 +19,7 @@ Les opérateurs `new` et `delete` sont utilisés pour gérer la mémoire dynamiq
   array[0] = 1;
   delete[] array;
 `
-## Opérateur `delete`
-
+- **Opérateur `new`** :
 Libère la mémoire allouée par `new`.
 
 ## . Passage par Adresse et Passage par Référence
