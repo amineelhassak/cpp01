@@ -2,11 +2,12 @@
 cpp01
 # Guide de Programmation C++
 
-## 1. Opérateurs `new` et `delete`
+## . Opérateurs `new` et `delete`
 
 Les opérateurs `new` et `delete` sont utilisés pour gérer la mémoire dynamique en C++.
 
 - **Opérateur `new`** : Alloue dynamiquement de la mémoire sur le tas (heap) pour créer des objets ou des tableaux d'objets dont la durée de vie dépasse la portée de la fonction dans laquelle ils ont été créés.
+
 
   **Exemples :**
 
@@ -19,8 +20,15 @@ Les opérateurs `new` et `delete` sont utilisés pour gérer la mémoire dynamiq
   array[0] = 1;
   delete[] array;
 `
-- **Opérateur `new`** :
+- **Opérateur `delete`** :
 Libère la mémoire allouée par `new`.
+
+## . Différence entre `malloc` et `new`, `free` et `delete`
+
+- **`new`** : Utilisé en C++ pour allouer de la mémoire et initialiser des objets, avec gestion automatique des constructeurs et destructeurs.
+- **`malloc`** : Utilisé en C pour allouer de la mémoire brute, sans appel aux constructeurs par défaut.
+- **`delete`** : Appelle le destructeur de l'objet, tandis que `free` ne l'appelle pas.
+
 
 ## . Passage par Adresse et Passage par Référence
 
@@ -49,7 +57,7 @@ int main() {
     std::cout << "Valeur de a après increment par référence : " << a << std::endl; 
 }
 ```
-## 3. Surcharge de Fonction
+## . Surcharge de Fonction
 
 La surcharge de fonction en C++ permet d'avoir plusieurs fonctions avec le même nom mais des signatures différentes dans la même portée.
 ## Points Clés de la Surcharge de Fonction
@@ -81,6 +89,28 @@ int main() {
     std::cout << "result2: " << result2 << std::endl;
     std::cout << "result3: " << result3 << std::endl;
     return 0;
+}
+```
+## . Paramètres par Défaut
+
+Les paramètres par défaut permettent de spécifier des valeurs par défaut pour les paramètres d'une fonction. Si la fonction est appelée sans fournir ces paramètres, les valeurs par défaut sont utilisées.
+
+```cpp
+#include <iostream>
+
+void displayMessage(std::string message = "Hello, World!", int times = 1); 
+
+int main() { 
+    displayMessage();
+    displayMessage("Bonjour!");
+    displayMessage("Salut!", 3);
+    return 0;
+} 
+
+void displayMessage(std::string message, int times) { 
+    for (int i = 0; i < times; ++i) {
+        std::cout << message << std::endl; 
+    } 
 }
 ```
 
