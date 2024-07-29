@@ -114,5 +114,12 @@ void displayMessage(std::string message, int times) {
 }
 ```
 
+## Droits d'Accès
+
+Les spécificateurs d'accès contrôlent la visibilité et l'accessibilité des membres d'une classe :
+
+- **public** : Accessible depuis n'importe où dans le programme.
+- **protected** : Accessible depuis la classe elle-même et les classes dérivées, mais pas depuis l'extérieur.
+- **private** : Accessible uniquement depuis la classe elle-même.
 
 
